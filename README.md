@@ -1,19 +1,51 @@
-===============================================================================
-PROJECT: Cahen's Constant Computation Engine
-===============================================================================
+# Cahen S Constant
 
-OVERVIEW:
-Calculates Cahen's constant (C ≈ 0.6434105462883380261822543077575647632866...) to arbitrary 
-precision (N digits). Cahen proved that C is transcendental.
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Python 3.10+](https://img.shields.io/badge/python-3.10+-blue.svg)](https://www.python.org/downloads/)
+[![CI](https://github.com/Raj123-0/Cahen-s-Constant/actions/workflows/ci.yml/badge.svg)](https://github.com/Raj123-0/Cahen-s-Constant/actions)
 
-ALGORITHM & MATHEMATICS:
-- Sylvester Sequence Series:
-    C = sum_{k=0}^{infinity} (-1)^k / (s_k - 1)
-  where s_0 = 2, s_{k+1} = s_k^2 - s_k + 1.
-- Doubly-Exponential Convergence: Precision doubles with every single series iteration!
 
-USAGE:
-    python "Cahen's Constant.py" -n 1000
+High-precision mathematical computation and OEIS digit generator for Cahen S Constant.
 
-TESTS:
-    pytest tests/
+## Overview
+
+`Cahen-s-Constant` implements high-precision evaluation of the **Cahen S Constant** using arbitrary-precision mathematical routines (`mpmath` and C-accelerated `gmpy2`). The engine generates exact decimal digits, formats standard OEIS b-file sequences, and includes an automated performance benchmark.
+
+## Features
+
+- **Arbitrary-Precision Calculation**: Configurable digit targets with optimized guard precision.
+- **OEIS b-file Output**: Generates 1-based index sequence files ready for OEIS submission.
+- **Performance Profiling**: Built-in benchmark suite to evaluate digits/sec scaling.
+- **Robust CLI**: Easy command-line interface with argument parsing.
+
+## Installation
+
+```bash
+git clone https://github.com/Raj123-0/Cahen-s-Constant.git
+cd Cahen-s-Constant
+pip install -r requirements.txt
+```
+
+## Usage
+
+Calculate digits with the CLI:
+
+```bash
+python "Cahen's Constant.py" --digits 1000
+```
+
+Run precision benchmarks:
+
+```bash
+python benchmarks/bench_precision.py
+```
+
+Run automated tests:
+
+```bash
+pytest tests/
+```
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
