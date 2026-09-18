@@ -29,10 +29,12 @@ import argparse
 import os
 import time
 
+from gmpy2 import mpz
+import mpmath
+
+
 os.environ.setdefault("MPMATH_GMPY2", "1")
 
-import mpmath
-from gmpy2 import mpz
 
 GUARD_DIGITS = 50
 
